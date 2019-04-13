@@ -1,6 +1,3 @@
-
-
-
 def consolidate_cart(cart)
   # code here
   grocery_hash = {}
