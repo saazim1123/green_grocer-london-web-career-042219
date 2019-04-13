@@ -18,23 +18,30 @@ end
 
 
 def apply_coupons(cart, coupons)
-  # code here
-  coupons.each do |coupon_hash| 
+  hash = cart
+  coupons.each do |coupon_hash|
+    # add coupon to cart
     item = coupon_hash[:item]
-    if cart.has_key?(item)
-      original_qty = cart[item][:count]
-      coupon_qty = original_qty / coupon_hash[:num]
-      coupon_applied = original_qty % coupon_hash[:num]
-        if coupon_qty > 0 
-          coupon_applied = cart[item][:count]
-          cart["#{item} W/COUPON"] = {
-            :price=> coupon_hash[:cost],
-            :clearance=> cart[item][:clearance],
-            :count=> coupon_qty }
-        end
+
+    if !hash[item].nil? && hash[item][:count] >= coupon_hash[:num]
+      temp = {"#{item} W/COUPON" => {
+        :price => coupon_hash[:cost],
+        :clearance => hash[item][:clearance],
+        :count => 1
+        }
+      }
+      
+      if hash["#{item} W/COUPON"].nil?
+        hash.merge!(temp)
+      else
+        hash["#{item} W/COUPON"][:count] += 1
+        #hash["#{item} W/COUPON"][:price] += coupon_hash[:cost]
+      end
+      
+      hash[item][:count] -= coupon_hash[:num]
     end
   end
-  cart
+  hash
 end
 
 def apply_clearance(cart)
