@@ -4,7 +4,7 @@ def consolidate_cart(cart: [])
   
   cart.each do |grocery|
     grocery.each do |product, value|
-      if
+      if grocery_hash
         
       end
     end
