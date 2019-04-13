@@ -26,6 +26,7 @@ def apply_coupons(cart, coupons)
       coupon_qty = original_qty / coupon_hash[:num]
       coupon_applied = original_qty % coupon_hash[:num]
         if
+        end
     end
   end
 end
