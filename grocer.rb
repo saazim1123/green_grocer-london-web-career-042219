@@ -9,6 +9,7 @@ def consolidate_cart(cart: [])
         
       else
         grocery_hash[item] = value
+        grocery_hash
       end
     end
   end
