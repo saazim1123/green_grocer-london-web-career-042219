@@ -27,6 +27,10 @@ def apply_coupons(cart, coupons)
       coupon_applied = original_qty % coupon_hash[:num]
         if coupon_qty > 0 
           coupon_applied = cart[item][:count]
+          cart["#{item} W/COUPON"] = {
+            :price=> coupon_hash[:cost],
+            :clearance=> cart[item][:clearance],
+            :count=> coupon_qty }
         end
     end
   end
