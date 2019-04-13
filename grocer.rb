@@ -24,6 +24,7 @@ def apply_coupons(cart, coupons)
     if cart.has_key?(item)
       original_qty = cart[item][:count]
       coupon_qty = original_qty / coupon_hash[:num]
+      coupon_applied = 
     end
   end
 end
