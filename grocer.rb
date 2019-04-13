@@ -19,7 +19,7 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  coupons.each do |cou| 
+  coupons.each do |coupon_hash| 
     
   end
 end
