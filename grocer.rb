@@ -12,8 +12,8 @@ def consolidate_cart(cart)
   hash
 end
 
-=begin
-def consolidate_cart(cart: [])
+
+def consolidate_cart(cart)
   # code here
   grocery_hash = {}
   
@@ -30,7 +30,7 @@ def consolidate_cart(cart: [])
   end
   grocery_hash
 end
-=end
+
 
 def apply_coupons(cart, coupons)
   # code here
