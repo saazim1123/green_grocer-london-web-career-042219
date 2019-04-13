@@ -1,18 +1,4 @@
-def consolidate_cart(cart:[])
-  # code here
-  new_hash = {}
-  cart.each do|product_hash|
-    product_hash.each do |item, item_hash|
-      if new_hash.has_key?(item)
-        new_hash[item][:count] += 1
-      else
-        new_hash[item] = item_hash
-        new_hash[item][:count] = 1
-      end
-    end
-  end
-  new_hash
-end
+
 
 =begin
 def consolidate_cart(cart: [])
