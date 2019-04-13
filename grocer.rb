@@ -20,7 +20,7 @@ end
 def apply_coupons(cart, coupons)
   # code here
   coupons.each do |coupon_hash| 
-    
+    item = coupon_hash[:item]
   end
 end
 
