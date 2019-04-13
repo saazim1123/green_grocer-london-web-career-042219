@@ -8,8 +8,8 @@ def consolidate_cart(cart: [])
         grocery_hash[product][:count] += 1 
         
       else
-        grocery_hash[item] = value
-        grocery_hash
+        grocery_hash[product] = value
+        grocery_hash[product]
       end
     end
   end
